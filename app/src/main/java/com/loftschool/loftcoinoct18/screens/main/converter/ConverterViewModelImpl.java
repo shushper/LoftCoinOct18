@@ -63,7 +63,6 @@ public class ConverterViewModelImpl implements ConverterViewModel {
                 .subscribe(this::onDestinationCurrencySelected);
 
 
-
         disposables.add(disposable1);
         disposables.add(disposable2);
     }
