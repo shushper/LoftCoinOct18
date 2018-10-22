@@ -2,6 +2,8 @@ package com.loftschool.loftcoinoct18.data.db.room;
 
 import com.loftschool.loftcoinoct18.data.db.Database;
 import com.loftschool.loftcoinoct18.data.db.model.CoinEntity;
+import com.loftschool.loftcoinoct18.data.db.model.Transaction;
+import com.loftschool.loftcoinoct18.data.db.model.TransactionModel;
 import com.loftschool.loftcoinoct18.data.db.model.Wallet;
 import com.loftschool.loftcoinoct18.data.db.model.WalletModel;
 
@@ -40,5 +42,15 @@ public class DatabaseImplRoom implements Database {
     @Override
     public void saveWallet(Wallet wallet) {
         database.walletDao().saveWallet(wallet);
+    }
+
+    @Override
+    public void saveTransaction(List<Transaction> transactions) {
+        database.walletDao().saveTransactions(transactions);
+    }
+
+    @Override
+    public Flowable<List<TransactionModel>> getTransactions(String walletId) {
+        return database.walletDao().getTransactions(walletId);
     }
 }
