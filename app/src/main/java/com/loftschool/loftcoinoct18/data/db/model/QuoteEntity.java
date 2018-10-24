@@ -1,7 +1,9 @@
 package com.loftschool.loftcoinoct18.data.db.model;
 
 
-public class QuoteEntity {
+import io.realm.RealmObject;
+
+public class QuoteEntity extends RealmObject {
 
     public double price;
 
