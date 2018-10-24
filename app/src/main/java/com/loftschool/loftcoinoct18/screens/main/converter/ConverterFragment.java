@@ -83,6 +83,7 @@ public class ConverterFragment extends Fragment {
 
     @Override
     public void onDestroy() {
+        viewModel.onDetach();
         disposables.dispose();
         super.onDestroy();
     }
